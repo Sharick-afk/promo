@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+$white: #ffffff;
+$w: #ffffff;
+$bg: #1d1d23;
+$b: #000000;
+$slug: '/promo/copyraiter-a-z-b/images/';
+
+$f1: 'Roboto', sans-serif;
+$f2: 'Ubuntu', sans-serif;
+
+// DEVICE WIDTH
+$tablet-width: 768px;
+$desktop-width: 1380px;
+
+// MEDIA
+@mixin tablet {
+  @media (max-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+$slug: 'https://static.willskill.ru/f/ru/promo/copyraiter-a-z-b/images/';

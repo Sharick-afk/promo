@@ -1,0 +1,111 @@
+@import './variables';
+
+.promo {
+  padding: 30px 0 100px;
+  @media (max-width: 998px) {
+    padding: 0 0 50px;
+  }
+  :global {
+    .container {
+      position: relative;
+      &::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 1308px;
+        width: 100%;
+        height: 275px;
+        background: rgba(61, 64, 141, 0.7);
+        filter: blur(117px);
+        content: '';
+      }
+    }
+    .promo__body {
+      position: relative;
+      max-width: 1182px;
+      margin: 0 auto;
+      padding: 40px;
+      background: #1e1e24;
+      border-radius: 20px;
+      text-align: center;
+      background: linear-gradient(
+        312deg,
+        rgba(54, 173, 96, 1) 0%,
+        rgba(50, 56, 175, 0) 31%,
+        rgba(50, 56, 175, 0) 70%,
+        rgba(50, 56, 175, 1) 100%
+      );
+      overflow: hidden;
+      box-sizing: border-box;
+      &::before {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 91px;
+        width: 640px;
+        height: 304px;
+        background: rgba(61, 64, 141, 0.6);
+        filter: blur(85px);
+        z-index: 1;
+        content: '';
+      }
+      div {
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        right: 1px;
+        bottom: 1px;
+        border-radius: inherit;
+        background: #1e1e24;
+      }
+      h2,
+      p,
+      h3 {
+        position: relative;
+        z-index: 2;
+      }
+      h2 {
+        margin-bottom: 25px;
+      }
+      p {
+        margin-bottom: 40px;
+        font-size: 24px;
+        line-height: 28px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      h3 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    @media (max-width: 998px) {
+      .container {
+        position: relative;
+        padding: 0;
+        &::before {
+          display: none;
+        }
+      }
+      .promo__body {
+        padding: 40px 15px;
+        &::before {
+          top: 162px;
+          width: 313px;
+          height: 285px;
+          background: rgba(61, 64, 141, 0.8);
+          filter: blur(55px);
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 19px;
+        }
+        h3 {
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}

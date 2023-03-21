@@ -1,0 +1,114 @@
+@import './variables';
+
+.faq {
+  padding: 130px 0 200px;
+  @media (max-width: 998px) {
+    padding: 80px 0 100px;
+  }
+
+  :global {
+    h2 {
+      margin-bottom: 80px;
+      text-align: center;
+    }
+    .faq__list {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .faq__item {
+      position: relative;
+      padding-bottom: 25px;
+      &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: linear-gradient(180deg, #222be5 0%, #0a77f9 88.02%);
+        content: '';
+      }
+
+      .faq__answer {
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        font-size: 16px;
+        line-height: 19px;
+        transition: 0.5s;
+        span {
+          display: block;
+        }
+        ul {
+          margin: 10px 0;
+          padding-left: 20px;
+          list-style-type: initial;
+          li + li {
+            margin-top: 5px;
+          }
+        }
+      }
+      &.active {
+        .faq__question {
+          color: #0a77f9;
+          span {
+            background: url($slug + 'open.svg');
+          }
+        }
+        .faq__answer {
+          max-height: 500px;
+          padding-top: 25px;
+          opacity: 1;
+          pointer-events: painted;
+        }
+      }
+    }
+    .faq__item + .faq__item {
+      margin-top: 32px;
+    }
+
+    .faq__question {
+      position: relative;
+      padding-right: 40px;
+      font-family: $f2;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 28px;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      transition: 0.3s;
+      span {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        width: 24px;
+        height: 24px;
+        background: url($slug + 'close.svg');
+      }
+    }
+    @media (max-width: 998px) {
+      h2 {
+        margin-bottom: 25px;
+      }
+      .faq__item {
+        padding-bottom: 15px;
+
+        &.active {
+          .faq__answer {
+            max-height: 700px;
+            padding-top: 35px;
+          }
+        }
+      }
+      .faq__item + .faq__item {
+        margin-top: 15px;
+      }
+
+      .faq__question {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}

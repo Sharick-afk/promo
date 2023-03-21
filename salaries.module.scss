@@ -1,0 +1,162 @@
+@import './variables';
+
+.salaries {
+  padding: 100px 0;
+  @media (max-width: 998px) {
+    padding: 100px 0 50px;
+  }
+  :global {
+    .container {
+      position: relative;
+      text-align: center;
+    }
+
+    h2 + p {
+      margin-top: 25px;
+    }
+    .salaries__text {
+      font-size: 24px;
+      line-height: 28px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .salaries__body {
+      position: relative;
+      display: flex;
+      margin: 40px 0;
+      align-items: center;
+      flex-direction: column;
+      &::before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 395px;
+        height: 568px;
+        background: rgba(61, 64, 141, 0.7);
+        filter: blur(137px);
+        border-radius: 50%;
+        content: '';
+      }
+    }
+    .salaries__line {
+      position: absolute;
+      top: 40px;
+      bottom: 40px;
+      left: calc(50% - 12px);
+      display: block;
+      width: 24px;
+      background: linear-gradient(180deg, #232343 0%, #212133 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      &-cover {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 40px;
+        background: #0a77f9;
+      }
+    }
+
+    .salaries__item {
+      position: relative;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: flex-end;
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: #0a77f9;
+        z-index: 2;
+        content: '';
+      }
+      span {
+        display: flex;
+        margin-right: 92px;
+        padding: 16px 24px;
+        font-weight: 600;
+        font-size: 64px;
+        line-height: 75px;
+        color: #ffffff;
+        border-radius: 40px;
+        background: #0a77f9;
+      }
+      p {
+        width: 50%;
+        padding-left: 52px;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: left;
+        box-sizing: border-box;
+      }
+    }
+    .salaries__item + .salaries__item {
+      margin-top: 120px;
+    }
+    @media (max-width: 1200px) {
+      .salaries__item {
+        span {
+          margin-right: 52px;
+        }
+        p {
+          padding-left: 32px;
+        }
+      }
+    }
+    @media (max-width: 998px) {
+      .container {
+        padding: 0;
+      }
+      h2 + p {
+        margin-top: 15px;
+      }
+      .salaries__text {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      .salaries__body {
+        margin: 30px 0 40px;
+        &::before {
+          width: 222px;
+          height: 453px;
+        }
+      }
+      .salaries__line {
+        top: 18px;
+        bottom: 18px;
+        left: calc(50% - 8px);
+        width: 16px;
+      }
+
+      .salaries__item {
+        &::before {
+          width: 18px;
+          height: 18px;
+        }
+        span {
+          margin-right: 10px;
+          padding: 4px 6px;
+          font-size: 24px;
+          line-height: 28px;
+          border-radius: 10px;
+        }
+        p {
+          padding-left: 24px;
+          padding-right: 10px;
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+      .salaries__item + .salaries__item {
+        margin-top: 90px;
+      }
+    }
+  }
+}

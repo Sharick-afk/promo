@@ -1,0 +1,80 @@
+@import './variables';
+
+.income {
+  position: relative;
+  padding: 177px 0 90px;
+  text-align: center;
+  z-index: 1;
+  @media (max-width: 998px) {
+    padding: 120px 0 50px;
+  }
+  :global {
+    .container {
+      > picture {
+        position: absolute;
+        left: 50%;
+        top: 87%;
+        transform: translate(-50%, -50%);
+        img {
+          max-width: none;
+        }
+      }
+    }
+    h2 {
+      position: relative;
+      z-index: 2;
+    }
+    .income__text {
+      position: relative;
+      max-width: 455px;
+      margin: 125px auto 140px;
+      font-size: 24px;
+      line-height: 28px;
+      color: rgba(255, 255, 255, 0.8);
+      z-index: 2;
+    }
+    a {
+      max-width: 340px;
+      width: 100%;
+      height: 56px;
+      margin: 0 auto;
+    }
+
+    .income__price {
+      position: relative;
+      margin-top: 40px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+      > span {
+        position: relative;
+        &::before {
+          position: absolute;
+          right: -32px;
+          top: 50%;
+          transform: translate(0, -50%);
+          z-index: -1;
+          content: url($slug + 'gr-text.svg');
+        }
+      }
+    }
+    @media (max-width: 998px) {
+      .container {
+        > picture {
+          left: 45%;
+          top: 62%;
+        }
+      }
+
+      .income__text {
+        max-width: 285px;
+        margin: 80px auto 100px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      a {
+        max-width: 287px;
+      }
+    }
+  }
+}
